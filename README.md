@@ -45,7 +45,7 @@ Enter a description of your movie preferences:
 ## Results
 - **Sample Output:**
 Here’s an example of what the output might look like for the sample query above:
-
+```bash
 Recommended Movies:
 
 1. 16 to Life
@@ -67,5 +67,5 @@ Recommended Movies:
 5. One Day
    Similarity: 0.2028
    Overview: a romantic comedy centered on dexter and emma  who first meet during their graduation in 1988 and proceed to keep in touch regularly  the film follows what they do on july 15 annually  usually doing something together
-
+```
 - **The link to watch the demo for the content based recommendation system is in demo.md file.**
