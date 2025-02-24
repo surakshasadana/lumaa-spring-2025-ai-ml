@@ -35,10 +35,12 @@ scikit-learn
 To run the recommendation system, execute:
 python recommend.py
 
-You will be prompted to enter a description of your movie preferences. For example:
-"Enter a description of your movie preferences:
->> I like romantic comedy"
-The system will then output the top 5 matching movies along with their similarity scores and overviews.
+You will be prompted to enter a description of your movie preferences. The system will then output the top 5 matching movies along with their similarity scores and overviews.
+For example:
+```bash
+Enter a description of your movie preferences:
+>> I like romantic comedy
+```
 
 ## Results
 - **Sample Output:**
