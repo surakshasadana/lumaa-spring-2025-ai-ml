@@ -1,91 +1,69 @@
-# AI/Machine Learning Intern Challenge: Simple Content-Based Recommendation
-
-**Deadline**: Sunday, Feb 23th 11:59 pm PST
-
----
+# Content-Based Movie Recommendation System
 
 ## Overview
+This project implements a simple content-based recommendation system for movies. It uses TF-IDF vectorization and cosine similarity to recommend movies that match a user’s textual description of their preferences. The system uses both movie overviews and keywords to compute similarity.
 
-Build a **content-based recommendation system** that, given a **short text description** of a user’s preferences, suggests **similar items** (e.g., movies) from a small dataset. This challenge should take about **3 hours**, so keep your solution **simple** yet **functional**.
+## Dataset
+- **Source:** Kaggle IMDB 500 Movie Datasets.
+- **Details:** For simplicity and speed, I am using the top 700 movies from the dataset.
+- **Loading:**  
+  Place the `movie_dataset.csv` file containing columns such as `overview`, `keywords`, and `original_title` or `title` in the repository’s root directory. The code will automatically load and preprocess the dataset.
 
-### Example Use Case
+## Setup
+- **Python Version:**  
+  This project requires Python 3.7 or higher.
+  
+- **Virtual Environment (Recommended):**  
+  To create and activate a virtual environment, run:
+  ```bash
+  python -m venv venv
+  # On macOS/Linux:
+  source venv/bin/activate
+  # On Windows:
+  venv\Scripts\activate
 
-- The user inputs:  
-  *"I love thrilling action movies set in space, with a comedic twist."*  
-- Your system processes this description (query) and compares it to a dataset of items (e.g., movies with their plot summaries or keywords).  
-- You then return the **top 3–5 “closest” matches** to the user.
+- **Install Dependencies:**
+Install the required packages with:
+pip install -r requirements.txt
 
----
+The dependencies include:
+pandas
+scikit-learn
 
-## Requirements
+## Running
+- **Running the Code:**
+To run the recommendation system, execute:
+python recommend.py
 
-1. **Dataset**  
-   - Use a **small** public dataset of items (e.g., a list of movies with plot summaries, or other textual descriptions).  
-   - Make sure the dataset is easy to handle (maybe 100–500 rows) so the solution remains quick to implement and run.  
-   - Include the dataset in your forked repository *or* provide instructions/link on how to download it.  
+You will be prompted to enter a description of your movie preferences. For example:
+"Enter a description of your movie preferences:
+>> I like romantic comedy"
+The system will then output the top 5 matching movies along with their similarity scores and overviews.
 
-2. **Approach**  
-   - **Content-Based**: At a minimum, use text similarity to recommend items.  
-     - For instance, you can transform both the user’s text input and each item’s description into TF-IDF vectors and compute **cosine similarity**.  
-   - Return the **top N** similar items (e.g., top 5).
+## Results
+- **Sample Output:**
+Here’s an example of what the output might look like for the sample query above:
 
-3. **Code Organization**  
-   - You may use a **Jupyter Notebook** or **Python scripts**.  
-   - Keep it **readable** and **modular** (e.g., one section for loading data, one for building vectors, one for computing similarity, etc.).  
-   - Briefly comment or docstring your key functions/sections.
+Recommended Movies:
 
-4. **Output**  
-   - When given an input description (e.g., `"I like action movies set in space"`), your system should print or return a list of recommended items (e.g., 3–5 titles).  
-   - Include the similarity score or rank if you’d like.
+1. 16 to Life
+   Similarity: 0.2261
+   Overview: romantic comedy  a small town teenager s angst about sexual inexperience drives a comic quest for love and understanding on a birthday to end all birthdays
 
-5. **Summary & Instructions**  
-   - A short `README.md` that includes:
-     - **Dataset**: Where it’s from, any steps to load it.  
-     - **Setup**: Python version, virtual environment instructions, and how to install dependencies (`pip install -r requirements.txt`).  
-     - **Running**: How to run your code (e.g., `python recommend.py "Some user description"` or open your notebook in Jupyter).  
-     - **Results**: A brief example of your system’s output for a sample query.
+2. Christmas Mail
+   Similarity: 0.2218
+   Overview: in this holiday romantic comedy  a mysterious woman who works at the post office answering santa s mail captures the heart of a disillusioned postal carrier
 
----
+3. Midnight in Paris
+   Similarity: 0.2183
+   Overview: a romantic comedy about a family traveling to the french capital for business  the party includes a young engaged couple forced to confront the illusion that a life different from their own is better
 
-## Deliverables
+4. About Last Night
+   Similarity: 0.2100
+   Overview: a modern reimagining of the classic romantic comedy  this contemporary version closely follows new love for two couples as they journey from the bar to the bedroom and are eventually put to the test in the real world
 
-1. **Fork the Public Repository**  
-   - **Fork** this repo into your own GitHub account.
+5. One Day
+   Similarity: 0.2028
+   Overview: a romantic comedy centered on dexter and emma  who first meet during their graduation in 1988 and proceed to keep in touch regularly  the film follows what they do on july 15 annually  usually doing something together
 
-2. **Implement Your Solution**  
-   - Load and preprocess your dataset (e.g., read CSV, handle text columns).  
-   - Convert text data to vectors (e.g., TF-IDF).  
-   - Implement a function to compute similarity between the user’s query and each item’s description.  
-   - Return the top matches.
-   - Salary expectation per month (Mandatory)
-
-3. **Short Video Demo**  
-   - In a `.md` file (e.g., `demo.md`) within your fork, paste a link to a **brief screen recording** (video link).  
-   - Demonstrate:
-     - How you run the recommendation code.  
-     - A sample query and the results.
-
-4. **Deadline**  
-   - Submit your fork by **Sunday, Feb 23th 11:59 pm PST**.
-
-> **Note**: This should be doable within ~3 hours. Keep it **straightforward**—you do **not** need advanced neural networks or complex pipelines. A simple TF-IDF + cosine similarity approach is sufficient.
-
----
-
-## Evaluation Criteria
-
-1. **Functionality**  
-   - Does your code run without errors?  
-   - When given an input query, does it successfully output relevant items?
-
-2. **Code Quality**  
-   - Clear, commented code (where it counts).  
-   - Logical steps (load data → transform → recommend).
-
-3. **Clarity**  
-   - Is your `README.md` straightforward about setup, how to run, and what to expect?
-
-4. **ML/Recommendation Understanding**  
-   - Basic implementation of a content-based recommendation approach (vectorization, similarity measure).
-
-**We look forward to seeing your solution!** Good luck!
+- **The link to watch the demo for the content based recommendation system is in demo.md file.**
